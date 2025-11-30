@@ -6,10 +6,8 @@ from gemini import get_price_from_gemini,get_price_from_gemini_predict
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 origins = [
-    "http://localhost:3000",  # Lokal ishlatish uchun
     "http://localhost:5173",  # Vite
-    "https://tenderwatch-bybmcmc0h5eebheb.canadacentral-01.azurewebsites.net", 
-    "https://tenderwatch.netlify.app/" # Sizning frontend hostingiz
+    "https://tenderwatch.netlify.app" # Sizning frontend hostingiz
 ]
 
 app.add_middleware(
@@ -25,7 +23,7 @@ UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 @app.get("/test")
 async def test_endpoint():
-    return {"message": "Server ishlayapti! Fix 23:20 bilan"}
+    return {"message": "Server ishlayapti! Fix 23:25 bilan"}
 @app.post("/upload-pdf")
 async def upload_pdf(file: UploadFile = File(...)):
     # Faqat PDF formatini tekshirish
