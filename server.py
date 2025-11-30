@@ -10,7 +10,9 @@ UPLOAD_DIR = "uploads"
 
 # uploads papkasini avtomatik yaratish
 os.makedirs(UPLOAD_DIR, exist_ok=True)
-
+@app.get("/test")
+async def test_endpoint():
+    return {"message": "Server ishlayapti!"}
 @app.post("/upload-pdf")
 async def upload_pdf(file: UploadFile = File(...)):
     # Faqat PDF formatini tekshirish
