@@ -1,0 +1,4 @@
+python-dotenv
+-q -U google-genai
+pdfplumber
+fastapi
