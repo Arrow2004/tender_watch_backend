@@ -44,6 +44,7 @@ def get_price_from_gemini_predict(parametr: str) -> int:
         f"Qimmatlik darajasi: [Necha foizga qimmat yoki arzonligini keltir]"
         f"Xulosa: [Shubhali bo'lmagan narx/ Juda qimmat / Shubxali darajada qimmat]"
         f"Agar 25-30% ga qimmatlik qilsa juda qimmat deb hisoblama, ammo 60% da yuqori bo'lsa juda qimmat va 100% dan baland bo'lsa shubxali qimmat deb keltir"
+        f"Agar bu qandaydur shartnoma emas deb o'ylasang: Berilgan file shartnomaga o'xshamayapti. Iltimos namunadagi kabi shartnoma yuklang"
     )   
 
     response = client.models.generate_content(
