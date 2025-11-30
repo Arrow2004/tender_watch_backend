@@ -37,8 +37,14 @@ def get_price_from_gemini_predict(parametr: str) -> int:
     prompt = (
         f"Quyidagi matndan maxsulot yoki xizmat ni top va unga berilgan narxni qaytar. Agar matnda maxsulot yoki xizmat va uning narxi mavjud bo'lmasa shartnoma emas deb qaytar"
         f"Matn {parametr}. "
-        f"Agar mavjud bo'lsa berilgan narx xizmat uchun qimmat emasmi? Necha foizga qimmatligini keltir. O'z taxminiy xulosalaringni keltir Toshkent shahridagi narxlardan kelib chiqib. Taxminiy natijani faqat necha foiz qimmatligini keltir ortiqcha izohlarsi. Kutilgan narxni ham keltir."
-    )
+        f"Agar mavjud bo'lsa berilgan narx xizmat uchun qimmat emasmi? Necha foizga qimmatligini keltir. O'z taxminiy xulosalaringni Toshkent shahridagi narxlardan kelib chiqqan xolda hisobla va taxminiy natijani quyidagicha qaytar(Ortiqcha stylelar kerak emas bold, italic yoki xar xil emojilar):"
+        f"Xizmat turi: [Sen aniqlagan xizmat nomi]"
+        f"Bitim narxi: [Shartnomada keltirilgan narx]"
+        f"Taxminiy Toshkent narxi: [Toshkent shahridagi o'rtacha narx]"
+        f"Qimmatlik darajasi: [Necha foizga qimmat yoki arzonligini keltir]"
+        f"Xulosa: [Shubhali bo'lmagan narx/ Juda qimmat / Shubxali darajada qimmat]"
+        f"Agar 25-30% ga qimmatlik qilsa juda qimmat deb hisoblama, ammo 60% da yuqori bo'lsa juda qimmat va 100% dan baland bo'lsa shubxali qimmat deb keltir"
+    )   
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",
