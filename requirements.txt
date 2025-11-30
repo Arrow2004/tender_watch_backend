@@ -3,3 +3,4 @@ google-genai
 pdfplumber
 fastapi
 gunicorn
+python-multipart
