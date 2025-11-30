@@ -25,7 +25,7 @@ UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 @app.get("/test")
 async def test_endpoint():
-    return {"message": "Server ishlayapti!"}
+    return {"message": "Server ishlayapti! Fix 23:12 bilan"}
 @app.post("/upload-pdf")
 async def upload_pdf(file: UploadFile = File(...)):
     # Faqat PDF formatini tekshirish
