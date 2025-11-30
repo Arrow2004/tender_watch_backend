@@ -1,4 +1,4 @@
 python-dotenv
--q -U google-genai
+google-genai
 pdfplumber
 fastapi
